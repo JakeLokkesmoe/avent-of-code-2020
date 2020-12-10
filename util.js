@@ -22,4 +22,16 @@ function read(filename) {
   });
 }
 
-module.exports = { readLines, read };
+function memoize(f) {
+  const cacheLookup = {}; // Value cache stored in the closure
+  return function () {
+    const key = Array.prototype.join.call(arguments, "-");
+    if (key in cacheLookup) {
+      return cacheLookup[key];
+    } else {
+      return (cacheLookup[key] = f.apply(this, arguments));
+    }
+  };
+}
+
+module.exports = { readLines, read, memoize };
