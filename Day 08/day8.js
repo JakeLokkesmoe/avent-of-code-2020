@@ -1,7 +1,7 @@
 const read = require("../util").read;
 
 async function run() {
-  const file = await read("Day 8/input.txt");
+  const file = await read("Day 08/input.txt");
 
   const lines = file.split("\n");
 

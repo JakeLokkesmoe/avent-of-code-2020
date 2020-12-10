@@ -1,7 +1,7 @@
 const readLines = require("../util");
 
 async function run() {
-  const lines = await readLines("Day 3/input.txt");
+  const lines = await readLines("Day 03/input.txt");
 
   const map = lines.map((l) => l.split(""));
 
